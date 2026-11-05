@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم السرية - مصطفى ياسر</title>
+    <style>
+        body { background-color: #121212; color: #fff; font-family: Tahoma, sans-serif; padding: 20px; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: #1e1e1e; padding: 30px; border-radius: 12px; border: 1px solid #d2d2ce; width: 100%; max-width: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        h2 { color: #d2d2ce; text-align: center; margin-bottom: 20px; }
+        input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; background: #2b2b2b; border: 1px solid #444; color: #fff; border-radius: 6px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background: #d2d2ce; color: #121212; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #ffffff; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="loginBox">
+        <h2>تسجيل الدخول</h2>
+        <input type="password" id="passInput" placeholder="اكتب كلمة المرور السرية">
+        <button onclick="checkPass()">دخول</button>
+    </div>
+
+    <div class="card hidden" id="controlBox">
+        <h2>لوحة التحكم</h2>
+        <label>أدخل النص الجديد للموقع:</label>
+        <textarea id="newText" rows="4" placeholder="اكتب هنا التعديلات التي تريدها..."></textarea>
+        <button onclick="saveChanges()">حفظ البيانات</button>
+    </div>
+
+    <script>
+        const MY_SECRET = "1234"; // كلمة المرور السرية الخاصة بك (يمكنك تغييرها لاحقاً)
+
+        function checkPass() {
+            const entered = document.getElementById('passInput').value;
+            if (entered === MY_SECRET) {
+                document.getElementById('loginBox').classList.add('hidden');
+                document.getElementById('controlBox').classList.remove('hidden');
+            } else {
+                alert('كلمة المرور غير صحيحة!');
+            }
+        }
+
+        function saveChanges() {
+            const text = document.getElementById('newText').value;
+            localStorage.setItem('siteContent', text);
+            alert('تم حفظ التعديلات بنجاح محلياً!');
+        }
+    </script>
+</body>
+</html>
