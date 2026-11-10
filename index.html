@@ -62,7 +62,8 @@ h2{font-size:clamp(1.8rem,4vw,3rem);line-height:1.25}
 .service-num{font:700 2rem Arial;color:#d6ad5555;margin-bottom:12px}
 .contact-grid{grid-template-columns:.8fr 1.2fr}
 .contact-list{display:grid;gap:14px;margin-top:22px}
-.contact-item{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#ffffff03}
+.contact-item{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#ffffff03;display:flex;justify-content:space-between;align-items:center;transition:.25s}
+.contact-item:hover{border-color:#d6ad5570;transform:translateY(-2px)}
 .contact-item small{display:block;color:var(--muted);font-size:.75rem}
 .contact-item strong{color:var(--gold2);direction:ltr;display:inline-block}
 form{display:grid;gap:13px}
@@ -79,7 +80,6 @@ footer .gold{color:var(--gold2)}
 @media(max-width:620px){.container{width:min(var(--max),calc(100% - 28px))}.nav{height:68px}.menu-btn{display:block}.links{display:none;position:absolute;top:68px;left:14px;right:14px;background:#101010;border:1px solid var(--line);border-radius:16px;padding:18px;flex-direction:column;align-items:stretch;gap:10px}.links.open{display:flex}.links a{padding:8px 4px}.hero{min-height:auto;padding:58px 0 45px}.hero p{font-size:1rem}.hero-card{min-height:240px;border-radius:24px}section{padding:65px 0}.about-grid,.projects,.services{grid-template-columns:1fr}.panel{padding:22px}.stats{gap:8px}.stat{padding:12px 5px}.stat strong{font-size:1.25rem}.footer-inner{flex-direction:column}}
 body {
     background-color: #121212;
-    /* بنحط صورة الخلفية ونخليها تغطي الشاشة كلها وثابتة وأنت بتتحرك */
     background-image: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.85)), url('photo_6010217981390032511_y.jpg');
     background-size: cover;
     background-position: center;
@@ -122,11 +122,26 @@ body {
 </section>
 <section id="projects">
   <div class="container">
-    <div class="section-head reveal"><div class="eyebrow">SELECTED WORK / مشروعاتي</div><h2>أفكار بتحولها <span class="gold">لواقع</span></h2><p class="section-desc">نماذج لمشروعاتي. تقدر تعدل أسماء المشروعات ووصفها وروابطها من الكود بسهولة.</p></div>
+    <div class="section-head reveal"><div class="eyebrow">SELECTED WORK / مشروعاتي</div><h2>أفكار بتحولها <span class="gold">لواقع</span></h2><p class="section-desc">نماذج لمشروعاتي وأعمالي الرقمية المنفذة.</p></div>
     <div class="grid projects">
-      <article class="panel project reveal"><div class="project-icon">✧</div><h3>بكالوريا سهلة</h3><p>فكرة تطبيق تعليمي يساعد الطلاب في تنظيم المذاكرة، التخطيط، والإجابة عن الأسئلة بمساعدة الذكاء الاصطناعي.</p><a class="project-link" href="#contact">اعرف المزيد ↗</a></article>
-      <article class="panel project reveal"><div class="project-icon">◈</div><h3>تصميمات إبداعية</h3><p>مساحة لعرض تصميمات الجرافيك، البوسترات، والهويات البصرية اللي بشتغل عليها.</p><a class="project-link" href="#contact">شوف الأعمال ↗</a></article>
-      <article class="panel project reveal"><div class="project-icon">⌘</div><h3>مشروع قادم</h3><p>هنا هضيف مشروعات جديدة وتجارب رقمية بمجرد ما تكون جاهزة للعرض.</p><a class="project-link" href="#contact">تابع الجديد ↗</a></article>
+      <article class="panel project reveal">
+        <div class="project-icon">📚</div>
+        <h3>مكتبة سدرة</h3>
+        <p>منصة إلكترونية متكاملة للمكتبات، تعرض الكتب وتسهل عمليات التصفح والطلب بتجربة مستخدم عصرية.</p>
+        <a class="project-link" href="https://moustafayasser8900-del.github.io/sidra-bookstore/" target="_blank" rel="noopener">زيارة الموقع ↗</a>
+      </article>
+      <article class="panel project reveal">
+        <div class="project-icon">✧</div>
+        <h3>بكالوريا سهلة</h3>
+        <p>فكرة تطبيق تعليمي يساعد الطلاب في تنظيم المذاكرة، التخطيط، والإجابة عن الأسئلة بمساعدة الذكاء الاصطناعي.</p>
+        <a class="project-link" href="#contact">اعرف المزيد ↗</a>
+      </article>
+      <article class="panel project reveal">
+        <div class="project-icon">◈</div>
+        <h3>تصميمات إبداعية</h3>
+        <p>مساحة لعرض تصميمات الجرافيك، البوسترات والهويات البصرية اللي بشتغل عليها.</p>
+        <a class="project-link" href="#contact">شوف الأعمال ↗</a>
+      </article>
     </div>
   </div>
 </section>
@@ -142,13 +157,30 @@ body {
 </section>
 <section id="contact">
   <div class="container">
-    <div class="section-head reveal"><div class="eyebrow">GET IN TOUCH / تواصل</div><h2>عندك فكرة؟ <span class="gold">خلينا نتكلم</span></h2><p class="section-desc">ابعتلي رسالة أو تواصل من خلال الروابط. بيانات التواصل هنا تجريبية وتحتاج تضيف بياناتك الحقيقية.</p></div>
+    <div class="section-head reveal"><div class="eyebrow">GET IN TOUCH / تواصل</div><h2>عندك فكرة؟ <span class="gold">خلينا نتكلم</span></h2><p class="section-desc">ابعتلي رسالة أو تواصل معي مباشرة عبر قنوات التواصل الاجتماعي وواتساب.</p></div>
     <div class="grid contact-grid">
-      <article class="panel reveal"><h3>روابط التواصل</h3><p>اختار الطريقة المناسبة للتواصل معايا.</p><div class="contact-list">
-        <a class="contact-item" href="https://www.instagram.com/" target="_blank" rel="noopener"><small>Instagram</small><strong>@your_username</strong></a>
-        <a class="contact-item" href="https://www.facebook.com/" target="_blank" rel="noopener"><small>Facebook</small><strong>Facebook Profile</strong></a>
-        <a class="contact-item" href="https://wa.me/" target="_blank" rel="noopener"><small>WhatsApp</small><strong>ابدأ محادثة</strong></a>
-      </div></article>
+      <article class="panel reveal">
+        <h3>روابط التواصل</h3>
+        <p>اختار الطريقة المناسبة للتواصل معايا:</p>
+        <div class="contact-list">
+          <a class="contact-item" href="https://wa.me/201508398551" target="_blank" rel="noopener">
+            <div><small>WhatsApp</small><strong>01508398551</strong></div>
+            <span style="color:var(--gold2);">💬</span>
+          </a>
+          <a class="contact-item" href="https://www.tiktok.com/@moustafayasser66" target="_blank" rel="noopener">
+            <div><small>TikTok</small><strong>@moustafayasser66</strong></div>
+            <span style="color:var(--gold2);">🎵</span>
+          </a>
+          <a class="contact-item" href="https://www.instagram.com/" target="_blank" rel="noopener">
+            <div><small>Instagram</small><strong>إنستجرام</strong></div>
+            <span style="color:var(--gold2);">📸</span>
+          </a>
+          <a class="contact-item" href="https://www.facebook.com/" target="_blank" rel="noopener">
+            <div><small>Facebook</small><strong>فيسبوك</strong></div>
+            <span style="color:var(--gold2);">👥</span>
+          </a>
+        </div>
+      </article>
       <article class="panel reveal"><h3>ابعت رسالة</h3><form id="contactForm"><label>اسمك<input name="name" placeholder="اكتب اسمك" required></label><label>البريد الإلكتروني<input name="email" type="email" placeholder="name@example.com" required></label><label>رسالتك<textarea name="message" placeholder="اكتب رسالتك هنا..." required></textarea></label><button class="btn primary" type="submit">إرسال الرسالة ↗</button><p id="formNote" style="font-size:.8rem;margin-top:8px">النموذج يفتح تطبيق البريد عندك — أضف بريدك في الكود أولًا.</p></form></article>
     </div>
   </div>
@@ -172,4 +204,3 @@ document.getElementById('contactForm').addEventListener('submit',e=>{
 </script>
 </body>
 </html>
-<img src="photo_6010217981390032511_y.jpg" alt="photo_6010217981390032511_y.jpg" style="width: 150px; height: 150px; border-radius: 50%; border: 3px solid #d2d2ce; object-fit: cover;">
